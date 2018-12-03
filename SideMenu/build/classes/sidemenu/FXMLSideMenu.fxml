@@ -103,6 +103,9 @@
                <effect>
                   <DropShadow />
                </effect>
+               <children>
+                  <FontAwesomeIconView id="iview_home" fx:id="iview_home" fill="#ffdc00" glyphName="HOME" layoutX="15.0" layoutY="40.0" onMouseClicked="#toMain" size="25" stroke="#000000a6" text="" />
+               </children>
             </AnchorPane>
             <JFXButton id="btn_spelers" fx:id="btn_spelers" graphicTextGap="0.0" layoutX="60.0" layoutY="131.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleButtonAction" prefHeight="80.0" prefWidth="225.0" ripplerFill="#2b2c2f" text="Spelers" textFill="WHITE">
                <font>

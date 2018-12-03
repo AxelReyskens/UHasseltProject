@@ -5,15 +5,16 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class FXMLSideMenuController {
-    
+
     SideMenu sideMenu = new SideMenu();
-    
+
     @FXML
     private AnchorPane ap_main;
 
@@ -78,6 +79,9 @@ public class FXMLSideMenuController {
     private AnchorPane ap_sidepane;
 
     @FXML
+    private FontAwesomeIconView iview_home;
+
+    @FXML
     private JFXButton btn_spelers;
 
     @FXML
@@ -106,27 +110,22 @@ public class FXMLSideMenuController {
 
     @FXML
     private FontAwesomeIconView iview_credits;
-    
+
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        
-        if(event.getSource() == btn_spelers) {
-            pnl_spelers.toFront();            
-        } else
-        if(event.getSource() == btn_moeilijkheid) {
+        if (event.getSource() == btn_spelers) {
+            pnl_spelers.toFront();
+        } else if (event.getSource() == btn_moeilijkheid) {
             pnl_moeilijkheid.toFront();
-        } else
-        if(event.getSource() == btn_thema) {
+        } else if (event.getSource() == btn_thema) {
             pnl_thema.toFront();
-        } else 
-        if(event.getSource() == btn_highscore) {
+        } else if (event.getSource() == btn_highscore) {
             pnl_highscore.toFront();
-        } else 
-        if(event.getSource() == btn_credits) {
+        } else if (event.getSource() == btn_credits) {
             pnl_credits.toFront();
         }
     }
-    
+
     @FXML
     private void changeToClassic() {
         Stage stage = SideMenu.getStage();
@@ -144,16 +143,15 @@ public class FXMLSideMenuController {
         stage.getScene().setUserAgentStylesheet(null);
         stage.getScene().getStylesheets().add(sideMenu.getXmasTheme());
     }
-    
+
+    @FXML
+    private void toMain(MouseEvent event) {
+        if (event.getSource() == iview_home) {
+            pnl_main.toFront();
+        }
+    }
+
     public void initialize() {
         pnl_main.toFront();
     }
-    
-   /** @FXML
-    private void closeMenuItem(ActionEvent event) {
-        if(event.getSource() == icon_close) {
-            pnl_main.toFront();
-        }
-    }*/
 }
-
